@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ross N. Hoffman — environmental scientist specializing in data assimilation, climate science, and atmospheric science.">
+  <meta name="color-scheme" content="light dark">
+  <title>Ross N. Hoffman — Environmental Scientist</title>
+  <style>
+    :root {
+      --ink: #173336;
+      --muted: #607476;
+      --paper: #f7f6f0;
+      --panel: rgba(255,255,255,.56);
+      --line: rgba(23,51,54,.16);
+      --accent: #13736f;
+      --accent-soft: #dcece8;
+      --max: 1100px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 88% 10%, rgba(82,159,148,.18), transparent 30rem),
+        linear-gradient(180deg, #fbfaf6 0%, var(--paper) 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid #e0963d; outline-offset: 4px; border-radius: 3px; }
+    .wrap { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+    header { padding: 22px 0; }
+    nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .name { font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.55rem, 3vw, 2.25rem); font-weight: 600; letter-spacing: -.035em; line-height: 1; text-decoration: none; }
+    .contact {
+      color: inherit; font-size: .9rem; font-weight: 680; text-decoration: none;
+      border-bottom: 1px solid currentColor; padding-bottom: 2px;
+    }
+    main { padding: clamp(34px, 5vw, 62px) 0 44px; }
+    .eyebrow { margin: 0 0 18px; color: inherit; font-size: .72rem; font-weight: 760; letter-spacing: .16em; text-transform: uppercase; }
+    h1 {
+      max-width: 930px; margin: 0; font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.5rem, 6vw, 5.2rem); font-weight: 400; line-height: 1; letter-spacing: -.05em;
+    }
+    h1 span { color: inherit; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(28px, 6vw, 70px); align-items: center; }
+    .portrait {
+      width: clamp(130px, 17vw, 190px);
+      height: auto;
+      max-height: 240px;
+      object-fit: contain;
+      border-radius: 3px;
+      filter: grayscale(12%);
+    }
+    .portrait[hidden] { display: none; }
+    .intro-grid {
+      display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr);
+      gap: clamp(32px, 7vw, 80px); margin-top: clamp(42px, 6vw, 68px); align-items: start;
+    }
+    h2 { margin: 0 0 18px; font-size: .78rem; letter-spacing: .15em; text-transform: uppercase; }
+    .bio { margin: 0; max-width: 720px; color: inherit; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.08rem, 1.8vw, 1.35rem); line-height: 1.48; }
+    .specialties { columns: 2; column-gap: 28px; margin: 0; padding-left: 1.15rem; color: inherit; font-size: .88rem; }
+    .specialties li { margin: 0 0 5px; padding-left: 2px; break-inside: avoid; }
+    .specialties li::marker { color: inherit; }
+    .profiles { margin-top: clamp(44px, 6vw, 68px); padding-top: 24px; border-top: 1px solid var(--line); }
+    .profile-list { display: grid; grid-template-columns: repeat(3, 1fr); margin: 0; padding: 0; list-style: none; }
+    .profile-list a {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 68px;
+      padding: 9px 18px 9px 0; border-bottom: 1px solid var(--line); text-decoration: none; font-size: .9rem; font-weight: 650;
+    }
+    .profile-list li:not(:nth-child(3n+1)) a { padding-left: 18px; border-left: 1px solid var(--line); }
+    .profile-list a::after { content: "↗"; color: inherit; transition: transform .2s ease; }
+    .profile-list a:hover { opacity: .65; }
+    .profile-list a:hover::after { transform: translate(3px, -3px); }
+    footer { padding: 22px 0 30px; color: var(--muted); font-size: .8rem; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 24px; }
+    footer a { color: var(--accent); }
+    @media (max-width: 720px) {
+      .wrap { width: min(calc(100% - 30px), var(--max)); }
+      header { padding-top: 20px; }
+      main { padding-top: 36px; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .portrait { width: 120px; order: -1; }
+      .intro-grid { grid-template-columns: 1fr; }
+      .profile-list { grid-template-columns: 1fr; }
+      .profile-list li:not(:nth-child(3n+1)) a { padding-left: 0; border-left: 0; }
+      footer .wrap { flex-direction: column; gap: 6px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+    @media (prefers-color-scheme: dark) {
+      :root { --ink: #e6efec; --muted: #9bb0ae; --paper: #102223; --panel: rgba(255,255,255,.035); --line: rgba(220,236,232,.16); --accent: #7cc7bc; }
+      body { background: radial-gradient(circle at 88% 10%, rgba(52,132,122,.23), transparent 30rem), #102223; }
+      .bio, .specialties li { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <nav aria-label="Primary navigation">
+      <a class="name" href="#top">Ross N. Hoffman</a>
+      <a class="contact" href="mailto:ross@rosshoffman.com">Get in touch</a>
+    </nav>
+  </header>
+
+  <main id="top" class="wrap">
+    <section class="hero-grid" aria-labelledby="headline">
+      <div>
+        <p class="eyebrow">Environmental science · Earth observations</p>
+        <h1 id="headline">Using environmental observations to improve <span>decision-making.</span></h1>
+      </div>
+      <!-- Add a portrait named "photo.jpg" beside this HTML file. If it is absent, the image slot stays hidden. -->
+      <img class="portrait" src="photo.jpg" alt="Portrait of Ross N. Hoffman" width="1985" height="2483" hidden
+           onload="this.hidden=false" onerror="this.hidden=true">
+    </section>
+
+    <div class="intro-grid">
+      <section aria-labelledby="about-title">
+        <h2 id="about-title">About</h2>
+        <p class="bio">Ross N. Hoffman is an environmental scientist whose work connects observations, numerical models, and rigorous analysis. His research focuses on extracting more value from Earth observations to improve our understanding of the atmosphere and climate—and to support better decisions.</p>
+      </section>
+      <section aria-labelledby="specialties-title">
+        <h2 id="specialties-title">Specialties</h2>
+        <ul class="specialties">
+          <li>Data assimilation</li>
+          <li>Climate science</li>
+          <li>Atmospheric science</li>
+          <li>Ocean surface winds</li>
+          <li>Scatterometer</li>
+          <li>OSSEs</li>
+          <li>Inverse problems</li>
+          <li>Adjoint models</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="profiles" aria-labelledby="profiles-title">
+      <h2 id="profiles-title">Research &amp; professional profiles</h2>
+      <ul class="profile-list">
+        <li><a href="https://orcid.org/0000-0002-4962-9438" target="_blank" rel="me noopener noreferrer">ORCID<span class="sr-only"></span></a></li>
+        <li><a href="https://scholar.google.com/citations?user=1Hq20YIAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+        <li><a href="https://www.webofscience.com/wos/author/record/E-9052-2018" target="_blank" rel="noopener noreferrer">Web of Science</a></li>
+        <li><a href="https://www.researchgate.net/profile/Ross-Hoffman" target="_blank" rel="noopener noreferrer">ResearchGate</a></li>
+        <li><a href="https://www.linkedin.com/in/rossnhoffman/" target="_blank" rel="me noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://sciprofiles.com/profile/3317637" target="_blank" rel="noopener noreferrer">SciProfiles</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="year"></span> Ross N. Hoffman</span>
+      <a href="mailto:ross@rosshoffman.com">ross@rosshoffman.com</a>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
